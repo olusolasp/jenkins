@@ -1,8 +1,9 @@
 pipeline{
 	agent any 
 	stages{
-        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-id', url: 'https://github.com/olusolasp/jenkins.git']])
-					steps{
+    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-id', url: 'https://github.com/olusolasp/jenkins.git']])
+    git branch: 'main', credentialsId: 'olusolasp', url: 'https://github.com/olusolasp/jenkins.git']])
+			steps{
 				echo "keep walking"
 				sh 'cat /etc/passwd'
 			}
