@@ -1,8 +1,8 @@
 pipeline{
 	agent any 
 	stages{
-		stage('1-start'){
-			steps{
+      git branch: 'main', credentialsId: 'olusolasp', url: 'https://github.com/olusolasp/jenkins.git'
+					steps{
 				echo "keep walking"
 				sh 'cat /etc/passwd'
 			}
